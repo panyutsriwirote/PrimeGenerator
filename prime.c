@@ -52,10 +52,10 @@ int main(int argc, char **argv) {
             }
             p = p->next;
         }
-        cur_num += 1;
         if (list_size == num_prime) {
             break;
         }
+        cur_num += 1;
     }
     clock_t end = clock();
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
