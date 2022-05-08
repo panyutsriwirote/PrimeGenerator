@@ -8,27 +8,25 @@ typedef struct _node {
     unsigned int num;
     struct _node *next;
 } node;
-node *prime;
+node *head;
+node *tail;
 //Variable to store the current size of the linked list
 unsigned int list_size = 1;
 //Call at the start of the program
 void initialize_with_2() {
-    prime = (node*)malloc(sizeof(node));
-    prime->num = 2;
-    prime->next = NULL;
+    head = (node*)malloc(sizeof(node));
+    head->num = 2;
+    head->next = NULL;
+    tail = head;
 }
 //Call when a new prime number is discovered
 void append(int new_num) {
     node *new_node = (node*)malloc(sizeof(node));
     new_node->num = new_num;
     new_node->next = NULL;
-    //Navigate to the end of the linked list
-    node **p = &prime;
-    while (*p != NULL) {
-        p = &((*p)->next);
-    }
-    //Insert the new node and update list_size variable
-    *p = new_node;
+    //Insert the new node and update the tail pointer and list_size variable
+    tail->next = new_node;
+    tail = new_node;
     list_size += 1;
 }
 int main(int argc, char **argv) {
@@ -50,7 +48,7 @@ int main(int argc, char **argv) {
     //A while loop that goes through each number one by one, starting with 3
     while (1) {
         square = sqrt((double)cur_num); //Used to reduce the number of required division
-        p = prime;
+        p = head;
         //A while loop that goes through each discovered prime number and performs remainder test
         while (1) {
             cur_prime = p->num;
