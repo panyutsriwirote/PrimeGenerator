@@ -47,11 +47,11 @@ int main(int argc, char **argv) {
     //Start of the generation
     initialize_with_2();
     printf("2\n");
-    //A while loop that go through each number one by one, starting with 3
+    //A while loop that goes through each number one by one, starting with 3
     while (1) {
         square = sqrt((double)cur_num); //Used to reduce the number of required division
         p = prime;
-        //A while loop that go through each discovered prime number and perform remainder test
+        //A while loop that goes through each discovered prime number and performs remainder test
         while (1) {
             cur_prime = p->num;
             if (cur_prime > square) {
