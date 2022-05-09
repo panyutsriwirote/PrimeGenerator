@@ -16,14 +16,12 @@ unsigned int list_size = 1;
 void initialize_with_2() {
     head = (node*)malloc(sizeof(node));
     head->num = 2;
-    head->next = NULL;
     tail = head;
 }
 //Call when a new prime number is discovered
 void append(int new_num) {
     node *new_node = (node*)malloc(sizeof(node));
     new_node->num = new_num;
-    new_node->next = NULL;
     //Insert the new node and update the tail pointer and list_size variable
     tail->next = new_node;
     tail = new_node;
