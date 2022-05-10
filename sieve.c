@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
         cur_num++;
         //In case of an overflow
         if (cur_num == 0) {
-            printf("Maximum number of primes reached");
+            printf("Maximum number of primes reached\n");
             break;
         }
     }
