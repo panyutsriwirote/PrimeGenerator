@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
             break;
         }
         square = sqrt((double)cur_num);
-        //A while loop that goes through each discovered prime number and performs remainder test
+        //A while loop that goes through each number less than the current number and performs remainder test
         for (i = 2; i < cur_num; i++) {
             if (i > square) {
                 printf("%u\n", cur_num);
