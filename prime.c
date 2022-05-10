@@ -25,7 +25,7 @@ void append(int new_num) {
     //Insert the new node and update the tail pointer and list_size variable
     tail->next = new_node;
     tail = new_node;
-    list_size += 1;
+    list_size++;
 }
 int main(int argc, char **argv) {
     //The arguments should be "prime [integer]" where [integer] represents the number of primes to generate
@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
         if (list_size == num_prime) { //The program ends when enough primes have been generated
             break;
         }
-        cur_num += 1; //Go to the next number
+        cur_num++; //Go to the next number
     }
     //Log spent time
     clock_t end = clock();
